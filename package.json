@@ -6,7 +6,8 @@
   "scripts": {
     "test": "test",
     "es": "babel src -d es",
-    "build": "webpack -p"
+    "build": "webpack -p",
+    "server": "webpack-dev-server "
   },
   "repository": {
     "type": "git",
@@ -27,6 +28,7 @@
     "babel-preset-env": "^1.6.1",
     "babel-preset-stage-0": "^6.24.1",
     "webpack": "^4.5.0",
-    "webpack-cli": "^2.0.14"
+    "webpack-cli": "^2.0.14",
+    "webpack-dev-server": "^3.1.3"
   }
 }

@@ -5,7 +5,9 @@ module.exports = {
   entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, 'lib'),
-    filename: 'tinper-storage.js'
+    filename: 'tinper-storage.js',
+    library: "tinper-storage",
+    libraryTarget: "umd"
   },
   module: {
     rules: [
