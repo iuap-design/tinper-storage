@@ -1,0 +1,32 @@
+{
+  "name": "tinper-storage",
+  "version": "0.0.1",
+  "description": "storage solution",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "es": "babel src -d es",
+    "build": "webpack -p"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iuap-design/tinper-storage.git"
+  },
+  "keywords": [
+    "localstorage"
+  ],
+  "author": "yonyou fed",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/iuap-design/tinper-storage/issues"
+  },
+  "homepage": "https://github.com/iuap-design/tinper-storage#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "webpack": "^4.5.0",
+    "webpack-cli": "^2.0.14"
+  }
+}
