@@ -1,11 +1,12 @@
 {
   "name": "tinper-storage",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "storage solution",
   "main": "./lib/tinper-storage.js",
   "scripts": {
-    "test": "test",
     "es": "babel src -d es",
+    "test": "test",
+    "dev": "webpack -w",
     "build": "webpack -p",
     "server": "webpack-dev-server "
   },

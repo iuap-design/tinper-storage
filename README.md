@@ -1,6 +1,6 @@
 # tinper-storage
 
-`tinper-storage` 对 Localstorage 的使用做了进一步的易用性封装，提供删除、新增和写入、清空、读取、遍历所有、查询剩余存储量等功能
+`tinper-storage` 对 Localstorage 的使用做了进一步的易用性封装，提供删除、新增和写入、清空、读取、遍历所有、查询已用存储量等功能
 
 
 
@@ -40,9 +40,9 @@ store.set();
 - clear() : 清空所有
 - getAll() : 获取所有缓存数据
 - each(callback) : 遍历缓存，并执行回调
-- checkRest(callback) : 检测Localstorage 剩余存储量
+- checkRest(callback) : 检测 Localstorage 已使用的存储量
+- getMaxLength() : 获取当前浏览器最大的存储量
 
 ## TODO
 
-- 构建
 - 新增功能和功能完善
