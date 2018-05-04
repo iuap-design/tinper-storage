@@ -1,6 +1,7 @@
 # tinper-storage
 
-（跨端）存储方案，目前只考虑 Localstorage 的应用封装。
+`tinper-storage` 对 Localstorage 的使用做了进一步的易用性封装，提供删除、新增和写入、清空、读取、遍历所有、查询剩余存储量等功能
+
 
 
 
@@ -15,11 +16,21 @@
 ## 如何使用
 
 1. `npm install tinper-storage --save`
-2. CDN : `/lib/tinper-storage.min.js`
+```
+import store from 'tinper-storage';
 
-## Feature
+// 使用
+store.set();
 
-对 Localstorage 的使用做了进一步的易用性封装，提供删除、新增和写入、清空、读取、遍历所有、查询剩余存储量等功能
+....
+```
+
+2. CDN : `https://design.yonyoucloud.com/static/tinper-storage/0.0.2/tinper-storage.min.js`
+
+```
+通过 window.store 拿到所有 API
+```
+
 
 ## API
 

@@ -1,8 +1,9 @@
 
 import { serialize, deserialize } from './utils'
 
+
 let store = {
-  version: __VERSION__,
+  version: "0.0.2",
   storage: window.localStorage
 }
   
@@ -107,5 +108,7 @@ try {
 } catch (e) {
   store.disabled = true
 }
-  
-  export default store
+
+window.store = store
+
+export default store
