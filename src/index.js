@@ -131,7 +131,6 @@ const api = {
        try {
         _this.remove('test');
         _this.set('test', sum);
-        console.log(sum.length / 1024)
        } catch(e) {
         _this.maxSize = (sum.length / 1024).toFixed(2);
         
