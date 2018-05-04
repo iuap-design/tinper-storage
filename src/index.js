@@ -3,8 +3,10 @@ import { serialize, deserialize } from './utils'
 
 
 let store = {
-  version: "0.0.2",
-  storage: window.localStorage
+  version: "0.0.4",
+  storage: window.localStorage,
+  maxSize: 0,
+  usedSize: 0
 }
   
 const api = {
@@ -85,10 +87,10 @@ const api = {
     }
   },
   /**
-   * 检测Localstorage 剩余存储量
+   * 检测Localstorage 已占用存储量
    * @param {*} callback 
    */
-  checkRest(callback) {
+  getUsed(callback) {
     let size = 0;
     let rest = null;
 
@@ -99,17 +101,20 @@ const api = {
       }
       
     }
-    rest = (size / 1024).toFixed(2)
-    if (callback) callback(rest)
+    this.usedSize = (size / 1024).toFixed(2)
+    if (callback) callback(this.usedSize)
     
-    return rest;
+    return this.usedSize;
   },
   /**
    * 获取
    */
   getMaxLength(){
-    var test = '0123456789';
-    var add = function(num) {
+    let test = '0123456789';
+    let maxSize = 0;
+    let _this = this;
+
+    const add = function(num) {
        num += num;
        if(num.length == 10240) {
          test = num;
@@ -119,22 +124,33 @@ const api = {
     }
     add(test);
 
-    var sum = test;
-    var show = setInterval(function(){
+    let sum = test;
+    let show = setInterval(function(){
        sum += test;
+       
        try {
-        this.remove('test');
-        this.set('test', sum);
-        console.log(sum.length / 1024 + 'KB');
+        _this.remove('test');
+        _this.set('test', sum);
+        console.log(sum.length / 1024)
        } catch(e) {
-        console.log(sum.length / 1024 + 'KB超出最大限制');
+        _this.maxSize = (sum.length / 1024).toFixed(2);
+        
         clearInterval(show);
        }
-    }, 0.1)
+    }, 0.05)
+
+    return this.maxSize;
+  },
+  /**
+   * 
+   */
+  getRest(){
+    return this.maxSize - this.usedSize
   }
 }
 
 Object.assign(store, api)
+
 
 try {
   if(!store.storage) alert('浏览器不支持localStorage');
@@ -143,6 +159,7 @@ try {
   store.set(testKey, testKey)
   if (store.get(testKey) !== testKey) {
     store.disabled = true
+    console.log('存储量满，无法操作')
   }
   store.remove(testKey)
 } catch (oException) {
@@ -154,6 +171,8 @@ try {
 	}
 }
 
+
 window.store = store
+
 
 export default store

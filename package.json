@@ -1,6 +1,6 @@
 {
   "name": "tinper-storage",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "storage solution",
   "main": "./lib/tinper-storage.js",
   "scripts": {

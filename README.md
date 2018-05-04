@@ -40,9 +40,9 @@ store.set();
 - clear() : 清空所有
 - getAll() : 获取所有缓存数据
 - each(callback) : 遍历缓存，并执行回调
-- checkRest(callback) : 检测 Localstorage 已使用的存储量
+- getUsed(callback) : 检测 Localstorage 已使用的存储量，并支持回调
 - getMaxLength() : 获取当前浏览器最大的存储量
-
+- getRest() : 获取剩余的存储量
 ## TODO
 
 - 新增功能和功能完善
