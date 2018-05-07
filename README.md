@@ -1,6 +1,6 @@
 # tinper-storage
 
-`tinper-storage` 对 Localstorage 的使用做了进一步的易用性封装，提供删除、新增和写入、清空、读取、遍历所有、查询已用存储量等功能
+`tinper-storage` 对 `localStorage` 和 `sessionStorage` 的使用做了进一步的易用性封装，提供删除、新增和写入、清空、读取、遍历所有、查询已用存储量等功能
 
 
 
@@ -17,32 +17,44 @@
 
 1. `npm install tinper-storage --save`
 ```
-import store from 'tinper-storage';
+import localStore from 'tinper-storage/localStore';
+import sessionStore from 'tinper-storage/sessionStore'
 
 // 使用
-store.set();
+localStore.set();
 
 ....
 ```
 
-2. CDN : `https://design.yonyoucloud.com/static/tinper-storage/0.0.2/tinper-storage.min.js`
+2. CDN 
 
-```
-通过 window.store 拿到所有 API
-```
+- `https://design.yonyoucloud.com/static/tinper-storage/0.1.0/localStore.js`，通过 window.localStore 拿到所有 API
+- `https://design.yonyoucloud.com/static/tinper-storage/0.1.0/sessionStore.js`，通过 window.sessionStore 拿到所有 API
+
+
 
 
 ## API
 
-- set(key, val) ：写入某条缓存
-- get(key, def) : 读取某条缓存数据
-- remove(key) : 删除某条缓存
-- clear() : 清空所有
-- getAll() : 获取所有缓存数据
-- each(callback) : 遍历缓存，并执行回调
-- getUsed(callback) : 检测 Localstorage 已使用的存储量，并支持回调
-- getMaxLength() : 获取当前浏览器最大的存储量
-- getRest() : 获取剩余的存储量
-## TODO
+- localStore
+    - set(key, val) ：写入某条缓存
+    - get(key, def) : 读取某条缓存数据
+    - remove(key) : 删除某条缓存
+    - clear() : 清空所有
+    - getAll() : 获取所有缓存数据
+    - each(callback) : 遍历缓存，并执行回调
+    - getUsed(callback) : 检测 Localstorage 已使用的存储量，并支持回调
+    - getMaxLength() : 获取当前浏览器最大的存储量
+    - getRest() : 获取剩余的存储量
+- sessionStore
+    - set(key, val) 
+    - get(key) 
+    - has(key) 
+    - remove(key) 
+    - clear() 
+    - getAll() 
+    - each(callback)
 
-- 新增功能和功能完善
+## License
+
+MIT

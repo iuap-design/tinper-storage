@@ -1,8 +1,8 @@
 {
   "name": "tinper-storage",
-  "version": "0.0.4",
+  "version": "0.1.0",
   "description": "storage solution",
-  "main": "./lib/tinper-storage.js",
+  "main": "./lib",
   "scripts": {
     "es": "babel src -d es",
     "test": "test",
