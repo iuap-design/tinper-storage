@@ -4,8 +4,8 @@ const webpack = require('webpack')
 module.exports = {
   mode: 'development',
   entry: {
-    localStorage: './src/localStore.js',
-    sessionStorage: './src/sessionStore.js'
+    localStore: './src/localStore.js',
+    sessionStore: './src/sessionStore.js'
   },
   output: {
     path: path.resolve(__dirname, 'lib'),
