@@ -15,10 +15,10 @@
 
 ## 如何使用
 
-1. `npm install tinper-storage --save`
+1.`npm install tinper-storage --save`
 ```
-import localStore from 'tinper-storage/localStore';
-import sessionStore from 'tinper-storage/sessionStore'
+import localStore from 'tinper-storage/lib/localStore';
+import sessionStore from 'tinper-storage/lib/sessionStore'
 
 // 使用
 localStore.set();
@@ -26,7 +26,7 @@ localStore.set();
 ....
 ```
 
-2. CDN 
+2.按 CDN 方式引用
 
 - `https://design.yonyoucloud.com/static/tinper-storage/0.1.0/localStore.js`，通过 window.localStore 拿到所有 API
 - `https://design.yonyoucloud.com/static/tinper-storage/0.1.0/sessionStore.js`，通过 window.sessionStore 拿到所有 API
